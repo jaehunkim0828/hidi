@@ -51,10 +51,15 @@ import Use3 from '@/public/images/use3.png';
 import style from '@/styles/home.module.scss';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useRef } from 'react';
 import { FaPlay } from 'react-icons/fa';
 import { IoIosArrowUp } from 'react-icons/io';
 
 export default function Home() {
+  const videoRef = useRef<HTMLDivElement>(null);
+  const projectoRef = useRef<HTMLDivElement>(null);
+  const serviceRef = useRef<HTMLDivElement>(null);
+  const designRef = useRef<HTMLImageElement>(null);
   return (
     <div className={style.container}>
       <button
@@ -66,10 +71,34 @@ export default function Home() {
       <div className={style.landing}>
         <header>
           <nav>
-            <button>VIDEO</button>
-            <button>PROJECT</button>
-            <button>SERVICE</button>
-            <button>DESIGN</button>
+            <button
+              onClick={() =>
+                videoRef.current?.scrollIntoView({ behavior: 'smooth' })
+              }
+            >
+              VIDEO
+            </button>
+            <button
+              onClick={() =>
+                projectoRef.current?.scrollIntoView({ behavior: 'smooth' })
+              }
+            >
+              PROJECT
+            </button>
+            <button
+              onClick={() =>
+                serviceRef.current?.scrollIntoView({ behavior: 'smooth' })
+              }
+            >
+              SERVICE
+            </button>
+            <button
+              onClick={() =>
+                designRef.current?.scrollIntoView({ behavior: 'smooth' })
+              }
+            >
+              DESIGN
+            </button>
           </nav>
         </header>
         <div className={style.content}>
@@ -124,7 +153,7 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
-      <div className={style.video}>
+      <div className={style.video} ref={videoRef}>
         <video src={'/'}></video>
         <button className={style.switch}>
           <FaPlay size={120} />
@@ -317,7 +346,11 @@ export default function Home() {
           </div>
         </FadeInWhenVisible>
       </div>
-      <div className={style.step3} style={{ padding: '150px 0' }}>
+      <div
+        className={style.step3}
+        style={{ padding: '150px 0' }}
+        ref={serviceRef}
+      >
         <FadeInWhenVisible delay={0.3}>
           <Image className={style.onbSub} src={Onb1} alt='onb1' />
         </FadeInWhenVisible>
@@ -441,7 +474,7 @@ export default function Home() {
           </span>
         </FadeInWhenVisible>
       </div>
-      <div className={style.step3}>
+      <div className={style.step3} ref={projectoRef}>
         <FadeInWhenVisible delay={0.3} y={50}>
           <Image className={style.check1} src={Checklist1} alt='checklist1' />
         </FadeInWhenVisible>
@@ -568,7 +601,12 @@ export default function Home() {
           </FadeInWhenVisible>
         </div>
       </div>
-      <Image className={style.back10} src={Back10} alt='back10' />
+      <Image
+        className={style.back10}
+        src={Back10}
+        alt='back10'
+        ref={designRef}
+      />
       <Image className={style.back10} src={Back11} alt='back11' />
       <Image className={style.back10} src={Footer} alt='footer' />
     </div>
