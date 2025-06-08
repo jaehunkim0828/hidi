@@ -28,7 +28,6 @@
 
         button {
           font-size: 24px;
-          line-height: 32px;
           font-weight: 600;
           background-color: transparent;
           color: #fff;
@@ -60,27 +59,28 @@
       .phone {
         position: absolute;
         right: 15%;
-        max-height: 80%;
+        width: 35vw;
+        // max-height: 80%;
         bottom: 0;
 
         .left {
           //   position: absolute;
           //   top: 50px;
           //   left: 50px;
-          width: 150px;
+          width: 8vw;
           height: auto;
         }
         .right {
           //   position: absolute;
           //   top: 150px;
           //   right: 0px;
-          width: 120px;
+          width: 6vw;
           height: auto;
         }
         .main {
           position: relative;
           bottom: 0;
-          max-width: 700px;
+          width: 100%;
           height: auto;
           right: 0;
         }
@@ -102,7 +102,6 @@
     color: #01f2aa !important;
     font-weight: 700;
     font-size: 36px;
-    line-height: 48px;
     text-align: center;
     font-family: 'Montserrat Alternates', sans-serif;
   }
@@ -116,7 +115,6 @@
 
   .desc {
     font-size: 24px;
-    line-height: 150%;
     white-space: pre-wrap;
     text-align: center;
     margin-top: 24px;
@@ -149,6 +147,8 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background-color: transparent;
+      width: 100%;
+      height: 100%;
       border: none;
       color: #414141;
     }
@@ -178,6 +178,9 @@
         font-size: 16px;
         color: #bfbfbf;
       }
+    }
+    .title {
+      margin-top: 24px;
     }
 
     .chatList {
@@ -287,11 +290,11 @@
       margin-bottom: 60px;
     }
     .step3Title {
-      font-size: 46px;
+      font-size: 32px;
       font-weight: 600;
-      line-height: 150%;
       white-space: pre-wrap;
       text-align: center;
+      margin-top: 48px;
     }
 
     .interviewList {
@@ -324,13 +327,12 @@
     }
     .onbDesc {
       font-size: 22px;
-      line-height: 42px;
       white-space: pre-wrap;
       margin-bottom: 180px;
     }
 
     .onb3 {
-      max-width: 900px;
+      max-width: 1000px;
       height: auto;
       width: 100%;
     }
@@ -473,7 +475,7 @@
     }
 
     .use3 {
-      width: 900px;
+      width: 800px;
       height: auto;
       margin-top: 60px;
     }
@@ -505,7 +507,6 @@
         white-space: pre-wrap;
         text-align: start;
         font-size: 22px;
-        line-height: 160%;
       }
     }
 
@@ -531,8 +532,8 @@
 
     img {
       position: relative;
-      max-width: 1200px;
-      width: calc(100% + 150px);
+      max-width: 1366px;
+      // width: calc(100% + 150px);
       height: auto;
       top: -200px;
     }
@@ -598,7 +599,6 @@
 
           h3 {
             font-size: 18px;
-            line-height: 24px;
             white-space: pre-wrap;
             font-weight: 400;
           }
@@ -650,7 +650,6 @@
       white-space: pre-wrap;
       text-align: center;
       font-size: 24px;
-      line-height: 32px;
       color: #b7b7b7;
     }
   }
@@ -700,7 +699,7 @@
   }
   .step10 {
     width: 100%;
-    // height: 550px;
+    height: 550px;
     background-image: url('/images/back9.png');
     background-size: cover;
     background-position: center;
@@ -709,6 +708,12 @@
     justify-content: center;
     align-items: flex-end;
     overflow: hidden;
+
+    img {
+      width: 600px;
+      z-index: 10;
+      height: auto;
+    }
   }
 
   .step11 {
@@ -738,7 +743,6 @@
           white-space: pre-wrap;
           text-align: start;
           font-size: 24px;
-          line-height: 36px;
         }
 
         img {

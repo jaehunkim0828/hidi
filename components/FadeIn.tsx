@@ -38,7 +38,7 @@ export default function FadeInWhenVisible({
       transition={{
         duration,
         delay,
-        ease: 'easeOut',
+        ease: 'easeInOut',
       }}
       style={{ zIndex, ...style }}
     >

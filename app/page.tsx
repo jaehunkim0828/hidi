@@ -51,8 +51,9 @@ import Use3 from '@/public/images/use3.png';
 import style from '@/styles/home.module.scss';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { FaPlay } from 'react-icons/fa';
+import { FaPause } from 'react-icons/fa6';
 import { IoIosArrowUp } from 'react-icons/io';
 
 export default function Home() {
@@ -60,6 +61,22 @@ export default function Home() {
   const projectoRef = useRef<HTMLDivElement>(null);
   const serviceRef = useRef<HTMLDivElement>(null);
   const designRef = useRef<HTMLImageElement>(null);
+  const playRef = useRef<HTMLVideoElement>(null);
+
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleTogglePlay = () => {
+    const video = playRef.current;
+    if (!video) return;
+
+    if (isPlaying) {
+      video.pause();
+    } else {
+      video.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
     <div className={style.container}>
       <button
@@ -102,13 +119,13 @@ export default function Home() {
           </nav>
         </header>
         <div className={style.content}>
-          <FadeInWhenVisible>
+          <FadeInWhenVisible duration={1.5}>
             <Image className={style.logo} src={L2} alt='l1' />
           </FadeInWhenVisible>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8, ease: 'easeOut' }}
+            transition={{ delay: 0.8, duration: 1.5, ease: 'easeOut' }}
           >
             <div className={style.phone}>
               {/* main: position: relative → OK */}
@@ -126,7 +143,7 @@ export default function Home() {
 
               {/* right: position: absolute → OK */}
               <motion.div
-                style={{ position: 'absolute', top: '150px', right: '0px' }} // 유지
+                style={{ position: 'absolute', top: '10vw', right: '0px' }} // 유지
                 animate={{ y: [0, -15, 0] }}
                 transition={{
                   duration: 2,
@@ -139,7 +156,7 @@ export default function Home() {
 
               {/* left: position: absolute → OK */}
               <motion.div
-                style={{ position: 'absolute', top: '50px', left: '50px' }} // 유지
+                style={{ position: 'absolute', top: '3vw', left: '3vw' }} // 유지
                 animate={{ y: [0, -15, 0] }}
                 transition={{
                   duration: 2,
@@ -154,9 +171,9 @@ export default function Home() {
         </div>
       </div>
       <div className={style.video} ref={videoRef}>
-        <video src={'/'}></video>
-        <button className={style.switch}>
-          <FaPlay size={120} />
+        <video ref={playRef} src={'/video.mov'}></video>
+        <button className={style.switch} onClick={handleTogglePlay}>
+          {isPlaying ? <FaPause size={40} /> : <FaPlay size={40} />}
         </button>
       </div>
       <div className={style.step1}>
@@ -402,7 +419,11 @@ export default function Home() {
       <div className={style.step6}>
         <FadeInWhenVisible delay={0.3}>
           <motion.div
-            style={{ position: 'relative' }} // 유지
+            style={{
+              position: 'relative',
+              display: 'flex',
+              justifyContent: 'center',
+            }} // 유지
             animate={{ y: [0, 10, 0] }}
             transition={{
               duration: 2,
