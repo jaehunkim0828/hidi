@@ -131,7 +131,7 @@ export default function Home() {
               {/* main: position: relative → OK */}
               <motion.div
                 style={{ position: 'relative' }} // 유지
-                animate={{ y: [0, 30, 0] }}
+                animate={{ y: [10, 40, 10] }}
                 transition={{
                   duration: 2,
                   repeat: Infinity,
@@ -494,9 +494,9 @@ export default function Home() {
           </h2>
         </FadeInWhenVisible>
         <FadeInWhenVisible delay={0.7}>
-          <span>
+          <div className={style.description}>
             {`기분도 들어주고, 맛집이든 감정이든 소중한 순간을 놓치지 않도록,투박이가 당신의 하루를 따뜻하게 정리해줘요.\n 말로 털어놓기만 하면, 감정과 기억을 함께 저장해주는 든든한 대화 파트너가 되어줍니다.`}
-          </span>
+          </div>
         </FadeInWhenVisible>
       </div>
       <div className={style.step3} ref={projectoRef}>
@@ -515,9 +515,9 @@ export default function Home() {
           <h2 className={style.title}>친구와 간편하게 약속을 잡아요.</h2>
         </FadeInWhenVisible>
         <FadeInWhenVisible delay={0.7}>
-          <span>
+          <div className={style.description}>
             {`약속 잡기 기능을 통해 친구와의 일정을 쉽고 빠르게 정할 수 있어요.\n카테고리 선택부터 날짜, 시간까지 한 번에 정리하고 편하게 약속을 제안해보세요.`}
-          </span>
+          </div>
         </FadeInWhenVisible>
         <div className={style.content}>
           <FadeInWhenVisible delay={0.7} y={30}>
@@ -544,9 +544,9 @@ export default function Home() {
           >{`나만의 하이디 리포트로\n성취감과 동기부여를 가져가요!`}</h2>
         </FadeInWhenVisible>
         <FadeInWhenVisible delay={0.7}>
-          <span>
+          <div className={style.description}>
             {`매일의 기록이 쌓이면, 나만의 리포트가 완성돼요. 작은 집중도 놓치지 않고,\n감정과 일정의 흐름을 리포트로 확인할 수 있어요. 기록을 통해 나를 더 잘 이해해보세요.`}
-          </span>
+          </div>
         </FadeInWhenVisible>
         <FadeInWhenVisible delay={0.7} y={50}>
           <div className={style.reportContent}>

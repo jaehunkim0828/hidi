@@ -59,7 +59,7 @@
       .phone {
         position: absolute;
         right: 15%;
-        width: 35vw;
+        width: 42vw;
         // max-height: 80%;
         bottom: 0;
 
@@ -306,6 +306,13 @@
       white-space: pre-wrap;
       text-align: center;
       margin-top: 48px;
+    }
+
+    .description {
+      white-space: pre-wrap;
+      text-align: center;
+      font-size: 24px;
+      color: #b7b7b7;
     }
 
     .interviewList {
@@ -657,7 +664,7 @@
     .title {
       font-size: 48px;
     }
-    span {
+    .description {
       white-space: pre-wrap;
       text-align: center;
       font-size: 24px;
@@ -683,10 +690,10 @@
       color: #000;
     }
 
-    span {
+    .description {
       color: #757575;
       white-space: pre-wrap;
-      text-align: center;
+      text-align: center !important;
       font-size: 24px;
     }
 
