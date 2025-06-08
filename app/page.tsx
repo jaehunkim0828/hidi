@@ -171,9 +171,13 @@ export default function Home() {
         </div>
       </div>
       <div className={style.video} ref={videoRef}>
-        <video ref={playRef} src={'/video.mov'}></video>
+        <video
+          ref={playRef}
+          src={'/video.mov'}
+          onEnded={() => setIsPlaying(false)}
+        ></video>
         <button className={style.switch} onClick={handleTogglePlay}>
-          {isPlaying ? <FaPause size={40} /> : <FaPlay size={40} />}
+          {isPlaying ? <FaPause size={120} /> : <FaPlay size={120} />}
         </button>
       </div>
       <div className={style.step1}>
