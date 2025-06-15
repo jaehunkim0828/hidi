@@ -13,6 +13,7 @@ import Checklist1 from '@/public/images/checkList1.png';
 import Checklist2 from '@/public/images/checkList2.png';
 import Down from '@/public/images/down.png';
 import Footer from '@/public/images/footer.png';
+import HeaderLogo from '@/public/images/headerLogo.png';
 import Interview1 from '@/public/images/interview1.png';
 import Interview2 from '@/public/images/interview2.png';
 import Interview3 from '@/public/images/interview3.png';
@@ -53,7 +54,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import { FaPlay } from 'react-icons/fa';
-import { FaPause } from 'react-icons/fa6';
 import { IoIosArrowUp } from 'react-icons/io';
 
 export default function Home() {
@@ -87,6 +87,7 @@ export default function Home() {
       </button>
       <div className={style.landing}>
         <header>
+          <Image src={HeaderLogo} alt='logo' />
           <nav>
             <button
               onClick={() =>
@@ -175,9 +176,10 @@ export default function Home() {
           ref={playRef}
           src={'/video.mov'}
           onEnded={() => setIsPlaying(false)}
+          // onClick={handleVideoStop}
         ></video>
         <button className={style.switch} onClick={handleTogglePlay}>
-          {isPlaying ? <FaPause size={120} /> : <FaPlay size={120} />}
+          {!isPlaying && <FaPlay size={120} />}
         </button>
       </div>
       <div className={style.step1}>
